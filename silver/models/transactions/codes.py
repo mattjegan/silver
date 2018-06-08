@@ -13,8 +13,9 @@
 # limitations under the License.
 
 
+DEFAULT_FAIL_CODE = 'default'
 FAIL_CODES = {
-    'default': {
+    DEFAULT_FAIL_CODE: {
         'message': 'The transaction has failed.'
     },
     'insufficient_funds': {
@@ -60,14 +61,16 @@ FAIL_CODES = {
     }
 }
 
+DEFAULT_REFUND_CODE = 'default'
 REFUND_CODES = {
-    'default': {
+    DEFAULT_REFUND_CODE: {
         'message': 'The transaction has been refunded.'
     },
 }
 
+DEFAULT_CANCEL_CODE = 'default'
 CANCEL_CODES = {
-    'default': {
+    DEFAULT_CANCEL_CODE: {
         'message': 'The transaction has been canceled.'
     }
 }
