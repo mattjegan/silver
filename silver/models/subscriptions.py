@@ -17,6 +17,7 @@ import calendar
 import logging
 from datetime import date, datetime, timedelta
 from decimal import Decimal
+from functools import reduce
 
 from annoying.functions import get_object_or_None
 from dateutil import rrule
