@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 import uuid
 from itertools import chain
 
+import django
 from django.db import migrations, models
 
 import silver.models.documents.pdf
@@ -71,12 +72,12 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='invoice',
             name='pdf',
-            field=models.ForeignKey(to='silver.PDF', null=True),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='silver.PDF', null=True),
         ),
         migrations.AddField(
             model_name='proforma',
             name='pdf',
-            field=models.ForeignKey(to='silver.PDF', null=True),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='silver.PDF', null=True),
         ),
 
         migrations.RunPython(move_pdf_from_documents_to_model,
