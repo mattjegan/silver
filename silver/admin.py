@@ -222,7 +222,7 @@ class SubscriptionAdmin(ModelAdmin):
                     user_id=request.user.id,
                     content_type_id=ContentType.objects.get_for_model(entry).pk,
                     object_id=entry.id,
-                    object_repr=unicode(entry),
+                    object_repr=repr(entry),
                     action_flag=CHANGE,
                     change_message='{action} action initiated by user.'.format(
                         action=action.replace('_', ' ').strip().capitalize()
@@ -647,7 +647,7 @@ class BillingDocumentAdmin(ModelAdmin):
                     user_id=request.user.id,
                     content_type_id=ContentType.objects.get_for_model(entry).pk,
                     object_id=entry.id,
-                    object_repr=unicode(entry),
+                    object_repr=repr(entry),
                     action_flag=CHANGE,
                     change_message='{action} action initiated by user.'.format(
                         action=readable_action
