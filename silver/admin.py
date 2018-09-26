@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from __future__ import absolute_import
 
 import os
 import errno
@@ -46,11 +47,11 @@ from silver.utils.international import currencies
 from silver.utils.payments import get_payment_url
 from silver.payment_processors.mixins import PaymentProcessorTypes
 
-from models import (Plan, MeteredFeature, Subscription, Customer, Provider,
+from silver.models import (Plan, MeteredFeature, Subscription, Customer, Provider,
                     MeteredFeatureUnitsLog, Invoice, DocumentEntry,
                     ProductCode, Proforma, BillingLog, BillingDocumentBase,
                     Transaction, PaymentMethod)
-from documents_generator import DocumentsGenerator
+from silver.documents_generator import DocumentsGenerator
 
 
 logger = logging.getLogger('silver')

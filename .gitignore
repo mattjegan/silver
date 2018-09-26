@@ -104,3 +104,6 @@ db.sqlite3
 
 # Redis dump
 dump.rdb
+
+Pipfile
+Pipfile.lock
