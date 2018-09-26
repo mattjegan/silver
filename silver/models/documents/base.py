@@ -59,7 +59,7 @@ logger = logging.getLogger(__name__)
 
 def documents_pdf_path(document, filename):
     path = '{prefix}{company}/{doc_name}/{date}/{filename}'.format(
-        company=slugify(unicode(
+        company=slugify(str(
             document.provider.company or document.provider.name)),
         date=document.issue_date.strftime('%Y/%m'),
         doc_name=('%ss' % document.__class__.__name__).lower(),

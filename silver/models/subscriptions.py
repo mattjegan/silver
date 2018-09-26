@@ -111,7 +111,7 @@ class MeteredFeatureUnitsLog(models.Model):
             super(MeteredFeatureUnitsLog, self).save(*args, **kwargs)
 
     def __unicode__(self):
-        return unicode(self.metered_feature.name)
+        return str(self.metered_feature.name)
 
 
 class Subscription(models.Model):

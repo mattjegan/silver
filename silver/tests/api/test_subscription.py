@@ -411,7 +411,7 @@ class TestSubscriptionEndpoint(APITestCase):
         url = reverse('mf-log-units',
                       kwargs={'subscription_pk': subscription.pk,
                               'customer_pk': subscription.customer.pk,
-                              'mf_product_code': metered_feature.product_code})
+                              'mf_product_code': metered_feature.product_code.value})
 
         date = str(datetime.date.today())
 
@@ -421,7 +421,7 @@ class TestSubscriptionEndpoint(APITestCase):
             "update_type": "absolute"
         }), content_type='application/json')
 
-        assert response.status_code == status.HTTP_200_OK
+        assert response.status_code == status.HTTP_200_OK, response.data
         assert response.data == {'count': 150}
 
         response = self.client.patch(url, json.dumps({
@@ -430,7 +430,7 @@ class TestSubscriptionEndpoint(APITestCase):
             "update_type": "relative"
         }), content_type='application/json')
 
-        assert response.status_code == status.HTTP_200_OK
+        assert response.status_code == status.HTTP_200_OK, response.data
         assert response.data == {'count': 179}
 
     @freeze_time('2017-01-01')

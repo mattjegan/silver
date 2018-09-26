@@ -296,7 +296,7 @@ class Transaction(models.Model):
             self.document.pay()
 
     def __unicode__(self):
-        return unicode(self.uuid)
+        return str(self.uuid)
 
 
 @receiver(post_transition)
